@@ -1,0 +1,28 @@
+<% include ../partials/head %>
+<% include ../partials/header%>
+
+<main>
+
+
+    <section>
+    <h2>My Profile</h2>
+      <ul>
+      <li> Name: <%= user.username %></li>
+      </ul>
+    </section>
+
+    <section>
+      <a href="/users/<%=user._id%>/edit">Edit</a>
+    </section>
+
+    <section>
+      <form action="/users/<%=user._id%>?_method=DELETE" method="POST">
+      <button type="submit">Delete User</button>
+      </form>
+    </section>
+
+</main>
+
+
+
+<% include ../partials/footer%>

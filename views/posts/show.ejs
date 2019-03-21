@@ -1,0 +1,22 @@
+<% include ../partials/head %>
+<% include ../partials/header%>
+
+<main>
+<h1><%=post.title%></h1>
+ <small>Created by: <a href="/users/<%= user._id %>"><%=user.username%></a></small> 
+<section>
+  <%=post.body%>
+</section>
+<section>
+  <a href="/posts/<%=post._id%>/edit">Edit</a>
+</section>
+<section>
+  <form action="/posts/<%=post._id%>?_method=DELETE" method="post">
+      <input type="submit" value="Delete Post"/>
+  </form>
+</section>
+</main>
+
+
+
+<% include ../partials/footer%>

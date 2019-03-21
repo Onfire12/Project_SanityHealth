@@ -1,0 +1,62 @@
+<% include ../partials/head %>
+<body class="text-center">
+<header class="mb-5">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+  <a class="navbar-brand" href="/">sanity.</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarsExample04">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/login">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/signup">Sign Up</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/dashboard">Posts</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/users/logout">Logout</a>
+      </li>
+    </ul>
+  </div>
+</div>
+</nav>
+</header>
+
+<main>
+    <h2> <%=post.topic%> </h2>
+    <small>by: <a href="/users/<%=user._id%>"><%=user.username%></a></small>
+    <form action="/dashboard/<%=post._id%>?_method=DELETE" method="POST">
+      <input id="delete-post" type="submit" value="Delete Post"/>
+    </form>
+    <p id="text-body"> <%= post.body%> </p>
+</main>
+
+<h4 id="h4-head">Have something to say?</h4>
+<section class="make-comment ">
+  <form class="new-comment" action="/dashboard/<%= post._id %>" method="POST">
+    <textarea class="make-comment" placeholder="write here" name="comments" rows="2" cols="50"></textarea>
+    <button type="submit" class="btn btn-secondary">make comment</button>
+  </form>
+</section>
+
+<div class="comments text-center">
+  <div class="comment-style">
+    <h4>Comments</h4><br/>
+    <% for (let i = 0; i < post.comments.length; i++) { %>
+      <h6>user:</h6>
+      <p>  <%= post.comments[i] %> </p>
+    <%  } %>
+  </div>
+</div>
+
+
+<% include ../partials/footer%>

@@ -1,0 +1,14 @@
+<% include partials/head %>
+<% include partials/header %>
+
+  <div class="container text-center">
+    <p class="lead font-weight-bold text-danger"><%= message %></p>
+  </div>
+
+<form class="" action="/users/login" method="post">
+  <input type="text" placeholder="username" name="username">
+  <input type="text" placeholder="password" name="password">
+  <button type="submit" name="button" class="btn btn-secondary">login</button>
+</form>
+
+<% include partials/footer %>

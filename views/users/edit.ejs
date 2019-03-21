@@ -1,0 +1,14 @@
+<% include ../partials/head %>
+<% include ../partials/header%>
+
+
+<main>
+<h2>Change Username</h2>
+<form action="/users/<%=user._id%>?_method=PUT" method="POST">
+<input type="text" name="username" value="<%=user.username%>"><br/>
+<button type="submit">Update Username</button>
+</form>
+</main>
+
+
+<% include ../partials/footer%>

@@ -1,0 +1,11 @@
+<% include ../partials/head %>
+<% include ../partials/header %>
+<main>
+  <form class="new-post" action="/dashboard" method="POST">
+    <input type="text" name="topic" placeholder="topic"><br>
+    <textarea name="body" rows="8" cols="80"></textarea>
+    <button type="submit" name="button">post</button>
+  </form>
+</main>
+
+<% include ../partials/footer %>

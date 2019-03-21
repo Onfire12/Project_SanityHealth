@@ -1,0 +1,17 @@
+<% include partials/head %>
+<% include partials/header %>
+
+<h2 id="help">It's never too late to ask for help.</h2>
+
+
+<% for (let i = 0; i < hotlines.length; i++) { %>
+  <div class="hotlines">
+  <h3> <%= hotlines[i].title %> </h3>
+    <% for (let j = 0; j < hotlines[i].links.length; j++) { %>
+      <p> <%= hotlines[i].links[j] %> </p>
+    <% } %>
+  </div>
+<% }  %>
+
+
+<% include partials/footer %>

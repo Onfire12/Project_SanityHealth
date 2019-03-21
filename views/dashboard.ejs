@@ -1,0 +1,52 @@
+<% include partials/head %>
+<body class="text-center">
+<header class="mb-5">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+  <a class="navbar-brand" href="/">sanity.</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarsExample04">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/login">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/signup">Sign Up</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/dashboard">Posts</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/users/logout">Logout</a>
+      </li>
+    </ul>
+  </div>
+</div>
+</nav>
+</header>
+
+
+<h2 id="recent-posts">Recent Posts</h2><br/>
+
+<main class="dash-board">
+    <div class="new-post">
+      <% for (let i = 0; i < posts.length; i++) { %>
+    <h3><a href="/dashboard/<%=posts[i]._id%>">
+       <%= posts[i].topic %> </a> </h3>
+    <%  } %>
+      <a href="/newpost">write post</a>
+  </div>
+
+
+</main>
+<div class="resources">
+  <p>Hey, how are you feeling? if you feel like you need some extra help, click <a href="/resource">here</a></p>
+</div>
+
+<% include partials/footer %>
